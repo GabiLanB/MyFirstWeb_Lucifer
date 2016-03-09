@@ -17,6 +17,9 @@ body{
     min-height: 100%;
     background: #6e0309;
 }
+a{
+    text-decoration: none;
+}
 header{
     width: 100%;
     height: 10vh;
@@ -25,6 +28,7 @@ header{
     z-index: 100;
     background-color: black;
 }
+
 div#divhead{
     display: none;
 }
@@ -38,6 +42,10 @@ footer{
     height: 10vh;
     background-color: lightcoral;
 }
+table, tr, td{
+    border: 0px;
+    border-collapse: collapse;
+}
 /************************* HEADER ****************************/
 header{
     vertical-align: middle;
@@ -46,15 +54,12 @@ header table{                        /* HEAD TABLE */
     height: 10vh;
     width: 100%;
 }
-header table, tr, td{
-    border: 0px;
-    border-collapse: collapse;
-}
+
 header table tr td{
     text-align: center;
 }
 header table td img{     /*sizing the HEAD image*/
-    height: 10vh;
+    height: 9vh;
     margin: 0 auto;
 }
 header table tr td:nth-child(3){
@@ -84,7 +89,9 @@ header table td:nth-of-type(2) img{
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    font-family: "roboto",sans-serif;
+    font-weight: bold;
+    background-color: #e61d30;
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -170,18 +177,178 @@ header table td:nth-of-type(2) img{
 .webdesigntuts-workshop button:focus {
 	background: #292929;
 	background: linear-gradient(#393939, #292929);
-	color: #5f5;
+	color: #e61d30;
 	outline: none;
 }
 @keyframes glow {
     0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+		border-color: #e61d30;
+		box-shadow: 0 0 5px rgba(230,29,48,.2), inset 0 0 5px rgba(230,29,48,.1), 0 2px 0 #000;
     }	
     100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+		border-color: #e61d30;
+		box-shadow: 0 0 20px rgba(230,29,48,.6), inset 0 0 10px rgba(230,29,48,.4), 0 2px 0 #000;
     }
+}
+/******************** DIV#divhead **************************/
+div#divhead{
+    height: 100%;
+}
+div#divhead table tr:last-child{
+    background: linear-gradient(to top, black , white);
+    opacity: 0.6;   
+    }
+div#divhead table tr td{
+    border: 0px solid white;
+    height: 40vh;
+    width: 25%;
+}
+div#divhead table tr td.firtsttd{
+    height: 50vh;
+}
+div#divhead table{
+    background-color: black;
+    background-image: url("../src/img/desktop/headerlucifer.jpg");
+    background-size: cover;
+}
+div#divhead table tr td img{
+    height: 80%;
+    width: 70%;
+    position: relative;
+    bottom: -40vh;
+    border-top: 1px solid #e61d30;
+    transition: 0.2s linear;
+    z-index: 2;
+}
+div#divhead table tr td img:hover{
+    border: 1px solid #e61d30;
+    box-sizing: content-box;
+    animation: glow 800ms ease-out infinite alternate;
+    transition: 0.2s linear;
+}
+div#divhead table tr td.tdcenter{
+    text-align: center;
+}
+div#divhead table tr td h1{
+    width: 98%;
+    font-family: "lora";
+    font-weight: bold;
+    font-size: 3vw;
+    color: whitesmoke;
+    text-shadow: #e61d30 2px 2px 1px;
+    border-bottom: 0.5vh solid #e61d30;
+    transition: 0.5s;
+}
+div#divhead table tr td h1:hover{
+    color: red;
+    text-shadow: whitesmoke  0.2vw 0.2vw 0;
+    border-bottom: 0.5vh solid #e61d30;
+}
+div#divhead table tr td p{
+    text-align: left;
+    text-align: inherit;
+    font-family: "lora" , sans-serif;
+    font-weight: bold;
+    font-size: 1.4vw;
+    color: whitesmoke;
+}
+header table td p span{
+    font-size: 1.5vw;
+}
+div#divhead table tr td span:last-child{
+    color: #e61d30;
+    text-shadow: whitesmoke 1px 1px 0;
+}
+/******************* NAV BAR ****************************/
+nav{
+    height: 10vh;
+    background-color: black;
+}
+nav ul{
+    display: flex;
+}
+nav ul, nav li{
+     margin: 0 auto;
+     list-style: none;
+     cursor: pointer;
+     color: white;
+     font-size: 24px;
+     transition: 0.2s ease-in-out;
+ }
+ nav ul li a {
+     text-decoration: none;
+     color: white;
+     vertical-align: middle;
+ }
+ nav ul li a:after{
+     color: white;
+ }
+ nav ul li a:active{
+     color: white;  
+ }
+ nav ul li a:visited{
+     color: white;
+ }
+ nav ul li a:hover{
+     color: red;
+     font-weight: bold;
+     text-shadow: white 1px 1px 0;
+     transition: 0.5s ease-in-out;
+ }
+nav li.menucontent{
+     position: relative;
+     width: 20vw;
+     height: 10vh;
+     vertical-align: middle;
+     text-align: center;
+     display: inline-block;
+ }
+nav .menuobtion{
+     width: 100%;
+     display: inline-block;   
+     height: 10vh;
+     vertical-align: middle;
+ }
+ nav ul.dropmenu{
+     display: none;
+     position: absolute;
+     width: 100%;
+ }
+ nav li.menucontent:hover ul.dropmenu{
+     margin: 0 auto;
+     display: block;
+     background-color: black;
+     transition: 0.5s ease-in-out;
+     text-shadow: white 1px 1px 0;
+     transition: 0.5s ease-in-out;
+ }
+ nav li:hover{
+     background-color: #720206;
+     padding-top: 10px;
+     margin: 0 auto;
+     text-shadow: white 1px 1px 0;
+     transition: 0.5s ease-in-out;
+ }
+ /****************** FONTS *******************/
+@font-face{
+    font-family: "handle";
+    src: url("../src/fnt/handle.ttf")
+}
+@font-face{
+    font-family: "lobster";
+    src: url("../src/fnt/lobster.ttf")
+}
+@font-face{
+    font-family: "lora";
+    src: url("../src/fnt/lora.ttf")
+}
+@font-face{
+    font-family: "roboto";
+    src: url("../src/fnt/roboto.ttf")
+}
+@font-face{
+    font-family: "source";
+    src: url("../src/fnt/source.ttf")
 }
 @media(min-width : 600px){
     html{
